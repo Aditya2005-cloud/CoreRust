@@ -1,7 +1,11 @@
 //Good breakdown overall:- Basic Data Types
 
 //Primitive data type
-//Integer ,Unsigned integer
+// Integer ,Unsigned integer:-
+//Rust has signed (+ and -) and unsigned (+ only) integers.
+//i8   i16   i32   i64   i128   isize is a signed integer
+//u8   u16   u32   u64   u128   usize is an unsigned integer
+
 //Float point
 //Boolean
 //Character or char
