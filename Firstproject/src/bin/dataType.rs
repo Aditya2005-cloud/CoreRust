@@ -403,6 +403,9 @@ fn comp_array() {
 // We will study String, &str, ownership,
 // borrowing and slices separately.
 //
+//
+//&String is a reference to a String which can automatically be converted to &str when needed
+//
 // ============================================================
 fn string_example() {
 
@@ -446,9 +449,14 @@ fn string_example() {
 
 fn vector_example() {
 
-    let numbers: Vec<i32> = vec![1, 2, 3, 4];
+    let numbers: Vec<u32> = vec![1, 2, 3, 4];
 
     println!("vector = {numbers:?}");
+
+    let grid: Vec<Vec<i32>> = vec![vec![1, 2], vec![3, 4]];
+    println!("{:?}", grid);
+    println!("{}", grid[0][0]); // 1
+    println!("{}", grid[1][1]); // 4
 }
 
 
