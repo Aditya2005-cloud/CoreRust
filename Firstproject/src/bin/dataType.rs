@@ -302,8 +302,13 @@ fn comp_tuple() {
     println!("character = {}", person.0);
     println!("number = {}", person.1);
     println!("boolean = {}", person.2);
-}
 
+    let student: ((i32, char), (i32, char)) = ((55, 'a'), (99, 'b'));//nested tuple
+    println!("{:?}", student);
+    println!("{}", student.0.0); // 55 — first tuple's first value
+    println!("{}", student.0.1); // 'a' — first tuple's second value
+    println!("{}", student.1.0); // 99 — second tuple's first value
+}
 
 // ============================================================
 // TUPLE INDEX
@@ -348,6 +353,13 @@ fn comp_array() {
     println!("first = {}", numbers[0]);// 1
     println!("second = {}", numbers[1]);
     println!("last = {}", numbers[4]);
+
+    let grid: [[i32; 2]; 2] = [[1, 2], [3, 4]];
+    println!("{:?}", grid);
+    println!("{}", grid[0][0]); // 1  — outer index 0, inner index 0
+    println!("{}", grid[0][1]); // 2  — outer index 0, inner index 1
+    println!("{}", grid[1][0]); // 3  — outer index 1, inner index 0
+
 }
 
 
@@ -364,18 +376,23 @@ fn comp_array() {
 //
 // String
 // -------------------------
-//
+// String = a blank notebook that you own. You can write in it, add more pages, erase and rewrite pages — it's fully yours to change.
 // String is an owned, growable UTF-8 string.
 //
 // Example:
 //
 // let name: String = String::from("Aditya");
-//
+// :: — this is called the path separator
+// from is a function whose entire job is: take some text, and build a brand-new String out of it.
+// ("Aditya") — this is the input we're giving to the from function — the parentheses hold the argument, just like any function call.
+//  "Aditya" here is a &str (plain quoted text) — and we're handing that &str to from, asking it to build us a full String from it.
 //
 // &str
 // -------------------------
 // The & in front means it's a reference — a pointer to text stored somewhere else in memory, rather than owning the text itself.
-// &str is a string slice.
+// &str = a photocopy someone hands you. You can read it, look at it, show it to others.
+// But it's not yours to write on or extend — you're just borrowing a look at it.
+// // &str is a string slice. which is fixed length cannot be changed and immutable
 //
 // Example:
 //

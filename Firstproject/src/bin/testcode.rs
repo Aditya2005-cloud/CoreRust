@@ -64,13 +64,47 @@
 //     println!("{}", x); // this DID work, no error — why?
 // }
 
-fn main() {
-    let name = String::from("Aditya");
-    print_name(name);
+// fn main() {
+//     let name = String::from("Aditya");
+//     print_name(name);
     
-    println!("{}", name); // ❌ this will NOT compile — why?
-}
+//     println!("{}", name); // ❌ this will NOT compile — why?
+// }
 
-fn print_name(n: String) {
-    println!("{}", n);
+// fn print_name(n: String) {
+//     println!("{}", n);
+// }
+// fixed
+// fn main() {
+//     let name = String::from("Aditya");
+//     print_name(&name); // borrow, don't move
+    
+//     println!("{}", name); // ✅ this works now
+// }
+
+// fn print_name(n: &String) {
+//     println!("{}", n);
+// }
+
+
+// fn main() {
+//     let student: (i32, char) = (85, 'A');
+//     println!("{:?}", student);
+// }
+
+// fn main(){
+//     let grid: [[i32; 2]; 2] = [[1, 2], [3, 4]];
+//     println!("{:?}", grid);
+//     println!("{}", grid[0][0]); // 1  — outer index 0, inner index 0
+//     println!("{}", grid[0][1]); // 2  — outer index 0, inner index 1
+//     println!("{}", grid[1][0]); // 3  — outer index 1, inner index 0
+//     println!("{}", grid[1][1]);
+// }
+
+fn main() {
+    let a: &str = "Aditya";              // String slice
+    let b: String = String::from("Aditya"); // String
+    
+    println!("{}", a);
+    println!("{}", b);
 }
