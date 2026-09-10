@@ -189,11 +189,48 @@
 
 
 
-fn main() {
-    let some_number: Option<i32> = Some(5);
+// fn main() {
+//     let some_number: Option<i32> = Some(5);
     
-    match some_number {//match. Think of it as Rust's way of saying: "look at what this actually is, and run different code depending on which case it turns out to be.
-        Some(value) => println!("Got a value: {}", value),
-        None => println!("There was nothing"),
-    }
+//     match some_number {//match. Think of it as Rust's way of saying: "look at what this actually is, and run different code depending on which case it turns out to be.
+//         Some(value) => println!("Got a value: {}", value),
+//         None => println!("There was nothing"),
+//     }
+// }
+
+// fn main() {
+//     let some_number: Option<i32> = Some(5);
+//     let no_number: Option<i32> = None;
+    
+//     println!("{}", some_number.is_some());
+//     println!("{}", no_number.is_none());
+// }
+
+// fn main() {
+
+//     let success: Result<i32, String> = Ok(100);
+
+//     let failure: Result<i32, String> =
+//         Err(String::from("Something went wrong"));
+
+//     println!("success = {success:?}");
+//     println!("failure = {failure:?}");
+// }
+
+
+// fn main() {
+//     let good: Result<i32, std::num::ParseIntError> = "42".parse();
+//     let bad: Result<i32, std::num::ParseIntError> = "abc".parse();
+    
+//     println!("{:?}", good);
+//     println!("{:?}", bad);
+// }
+
+fn main() {
+    let mut a: String = String::from("Adiya");
+    
+    a.push_str(" Saha"); // adds a whole &str
+    a.push('!');          // adds just ONE character (single quotes)
+    
+    println!("{}", a);
 }

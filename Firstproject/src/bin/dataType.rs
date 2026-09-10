@@ -219,6 +219,7 @@ fn number_b() {
 
     println!("Is it raining? {raining}");
     println!("Is it sunny? {sunny}");
+    let is_active: bool = true; // true/false only
 }
 
 
@@ -416,6 +417,22 @@ fn string_example() {
 
     let num = 42;
     let num_str: String = num.to_string(); // "42"
+    
+    let mut a: String = String::from("Adiya");
+    
+    a.push_str(" Saha"); // adds a whole &str
+    a.push('!');          // adds just ONE character (single quotes)
+    
+    println!("{}", a);
+
+    let a = String::from("Aditya");
+    let b = a;              // MOVE — a is now invalid
+    let c = a.clone();      // COPY — a stays valid too, real duplicate
+
+    fn greet(name: &str) {  // borrow — doesn't take ownership
+        println!("{}", name);
+    }
+    greet(&a); // a still valid after this
 }
 
 
@@ -457,6 +474,10 @@ fn vector_example() {
     println!("{:?}", grid);
     println!("{}", grid[0][0]); // 1
     println!("{}", grid[1][1]); // 4
+    
+    let mut numbers: Vec<i32> = vec![1, 2, 3];
+    numbers.push(4);        // add to end
+    let last = numbers.pop(); // remove from end, returns Option<i32>
 }
 
 
@@ -482,6 +503,11 @@ fn option_example() {
 
     println!("age = {age:?}");
     println!("unknown = {unknown:?}");
+
+    let some_number: Option<i32> = Some(5);
+    let no_number: Option<i32> = None;
+    println!("{}", some_number.is_some());//.is_some() — asks "does this Option actually contain a value?" and gives back true or false
+    println!("{}", no_number.is_none());//.is_none() — asks "is this Option empty?" and gives back true or false
 }
 
 
