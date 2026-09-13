@@ -292,10 +292,23 @@
 //     println!("{:?}", s2);
 // }
 
-struct Point(i32, i32); // Tuple as a struct Point(i32, i32)=(0,0) plain tuple — no real "identity", just a shape
+// struct Point(i32, i32); // Tuple as a struct Point(i32, i32)=(0,0) plain tuple — no real "identity", just a shape
 
-fn main() {
-    let origin = Point(55, 212);
-    println!("{}", origin.0);
-    println!("{}", origin.1);
+// fn main() {
+//     let origin = Point(55, 212);
+//     println!("{}", origin.0);
+//     println!("{}", origin.1);
+// }
+
+#[derive(Debug)]
+struct User{
+    name:String,
+    age:i32,
+}
+fn main{
+    let user=User{
+        name:String::from("Aditya"),
+        age:21,
+    };
+    println!("{:?}",user);
 }
