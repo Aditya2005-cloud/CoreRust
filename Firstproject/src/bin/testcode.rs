@@ -226,11 +226,76 @@
 //     println!("{:?}", bad);
 // }
 
+// fn main() {
+//     let mut a: String = String::from("Adiya");
+    
+//     a.push_str(" Saha"); // adds a whole &str
+//     a.push('!');          // adds just ONE character (single quotes)
+    
+//     println!("{}", a);
+// }
+
+// Rust
+
+// #[derive(Debug)]// this is It tells Rust: "automatically generate the ability to debug-print this struct for me." 
+// //This is called an attribute — a special instruction to the compiler, marked with #[...].
+// //  You don't need to understand the full mechanics yet — just know this exact line is the standard way to make a struct printable.
+// struct Student {
+//     name: String,
+//     age: i32,
+//     grade: char,
+// }
+
+// fn main() {
+//     let s1 = Student {
+//         name: String::from("Aditya"),
+//         age: 21,
+//         grade: 'A',
+//     };
+    
+//     println!("{}", s1.name);
+//     println!("{}", s1.age);
+//     println!("{}", s1.grade);
+//     println!("{s1:?}");
+
+// }
+
+// #[derive(Debug)]
+// struct Student {
+//     name: String,
+//     age: i32,
+//     grade: char,
+// }
+
+// // fn main() {
+// //     let name = String::from("Aditya");
+// //     let age = 21;
+// //     let grade = 'A';
+    
+// //     let s1 = Student { name, age, grade }; // shorthand — no "name: name"
+    
+// //     println!("{:?}", s1);
+// // }
+
+// fn main() {
+//     let s1 = Student {
+//         name: String::from("Aditya"),
+//         age: 21,
+//         grade: 'A',
+//     };
+    
+//     let s2 = Student {
+//         age: 22,     // only this field is different
+//         ..s1         // everything else, copy from s1
+//     };
+    
+//     println!("{:?}", s2);
+// }
+
+struct Point(i32, i32); // Tuple as a struct Point(i32, i32)=(0,0) plain tuple — no real "identity", just a shape
+
 fn main() {
-    let mut a: String = String::from("Adiya");
-    
-    a.push_str(" Saha"); // adds a whole &str
-    a.push('!');          // adds just ONE character (single quotes)
-    
-    println!("{}", a);
+    let origin = Point(55, 212);
+    println!("{}", origin.0);
+    println!("{}", origin.1);
 }

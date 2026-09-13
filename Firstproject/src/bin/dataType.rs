@@ -559,12 +559,23 @@ fn result_example() {
 //
 // ============================================================
 
-struct User {
+// struct User {
+//     name: String,
+//     age: i32,
+//     grade: char,
+// }
 
-    name: String,
-
-    age: u32,
-}
+// fn main() {
+//     let s1 = User {
+//         name: String::from("Aditya"),
+//         age: 21,
+//         grade: 'A',
+//     };
+    
+//     println!("{}", s1.name);
+//     println!("{}", s1.age);
+//     println!("{}", s1.grade);
+// }
 
 
 // ============================================================
