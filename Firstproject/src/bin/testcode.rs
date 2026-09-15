@@ -300,15 +300,85 @@
 //     println!("{}", origin.1);
 // }
 
-#[derive(Debug)]
-struct User{
-    name:String,
-    age:i32,
+// #[derive(Debug)]
+// struct User{
+//     name:String,
+//     age:i32,
+// }
+// #[derive(Debug, Clone)]
+// struct Student {
+//     name: String,
+//     age: i32,
+//     grade: char,
+// }
+
+// fn main() {  // <- fixed: added ()
+//     let user = Student {
+//         name: String::from("Aditya"),
+//         age: 21,
+//         grade: 'A',
+//     };
+//     println!("{:?}", user);
+
+//     let user2 = user.clone();
+//     println!("{:?}", user2);
+// }
+
+// struct Student {
+//     name: String,
+//     age: i32,
+// }
+
+// impl Student {
+//     fn greet(&self) {
+//         println!("Hello, my name is {}", self.name);
+//     }
+// }
+
+// fn main() {
+//     let user = Student {
+//         name: String::from("Aditya"),
+//         age: 21,
+//     };
+    
+//     user.greet();
+// }
+
+
+// struct user_defined_example{
+//     user_name: String,
+//     user_age: i32
+// }
+// impl user_defined_example{
+//     fn user_greet(&self){
+//         println!("this is the member of the struct {}", self.user_name);
+//     }
+// }
+// fn main(){
+//     let user = user_defined_example{
+//         user_name: String::from("Aditya"),
+//         user_age: 21
+//     };
+//     user.user_greet();
+// }
+
+struct Student {
+    name: String,
+    age: i32,
 }
-fn main{
-    let user=User{
-        name:String::from("Aditya"),
-        age:21,
+
+impl Student {
+    fn is_adult(&self) -> bool {
+        self.age >= 18
+    }
+}
+
+fn main() {
+    let user = Student {
+        name: String::from("Aditya"),
+        age: 21,
     };
-    println!("{:?}",user);
+    
+    let result = user.is_adult();
+    println!("is adult: {}", result);
 }
